@@ -1,6 +1,6 @@
 # financyPlan
 
-
+AHOJ VSETCI
 
 ## Getting started
 
