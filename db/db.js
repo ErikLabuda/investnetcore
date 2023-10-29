@@ -3,14 +3,20 @@ const mongoose = require('mongoose');
 // URL adresa vašej MongoDB databázy
 const dbURL = 'mongodb+srv://labe01:Erik1Erik2@mongodb.dy89bif.mongodb.net/admin';
 
-mongoose.connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true });
+async function mongooseConnection() {
+  try {
+    await mongoose.connect(dbURL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log('Mongoose connected');
+  } catch (error) {
+    console.error('Mongoose connection error:', error);
+  }
+}
 
-const db = mongoose.connection;
+const dbConnection = mongoose.connection;
+dbConnection.on('error', (err) => console.error(`Connection error ${err}`));
+dbConnection.once('open', () => console.log('Connected to DB!'));
 
-db.on('error', (error) => {
-  console.error('Chyba pripojenia k databáze:', error);
-});
-
-db.once('open', () => {
-  console.log('Pripojené k databáze MongoDB');
-});
+module.exports = mongooseConnection;
