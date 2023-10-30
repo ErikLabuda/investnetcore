@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // URL adresa vašej MongoDB databázy
-const dbURL = 'mongodb+srv://labe01:Erik1Erik2@mongodb.dy89bif.mongodb.net/admin';
+const dbURL = 'mongodb+srv://labe01:Erik1Erik2@mongodb.dy89bif.mongodb.net/invest';
 
 async function mongooseConnection() {
   try {

@@ -10,6 +10,7 @@ app.use(cors())
 
 app.use('/api', mainRouter)
 
+app.use(express.static('static'))
 app.use((_, res) => {
     res.send({
         message: 'Not found!'
@@ -21,8 +22,8 @@ app.use((_, res) => {
 
 
 mongooseConnection()
-app.listen(5500, (req, res) => {
-    console.log('Server up at 5500')
+app.listen(7000, (req, res) => {
+    console.log('Server up at 7000')
 })
 
 
