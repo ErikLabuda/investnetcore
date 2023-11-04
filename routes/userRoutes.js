@@ -1,11 +1,15 @@
-const express = require('express')
-const userController = require('../controllers/user')
-const userRouter = express.Router()
+const express = require('express');
 
-userRouter.route('/register').post(userController.register)
+// Importování controlleru pro uživatele
+const userController = require('../controllers/user');
 
-userRouter.route('/login').post(userController.login)
+// Vytvoření instance routeru pro vytvoření cest
+const userRouter = express.Router();
 
+// Definice cest a přiřazení odpovídajících funkcí controlleru
+userRouter.route('/register').post(userController.register); // Cesta pro registraci uživatele
+userRouter.route('/login').post(userController.login); // Cesta pro přihlášení uživatele
+userRouter.route('/changePassword').post(userController.changePassword)
 
-
-module.exports = userRouter
+// Exportování routeru pro použití v jiných částech aplikace
+module.exports = userRouter;

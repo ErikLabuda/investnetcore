@@ -1,8 +1,11 @@
-const {Router: expressRouter} = require('express')
-const router = expressRouter()
+const { Router: expressRouter } = require('express');
 
-//routy tykajuce sa prihlasenia a odhlasenia
-const authRouter = require('./userRoutes')
-router.use('/auth', authRouter)
+// Vytvoření instance routeru pro vytvoření cest
+const router = expressRouter();
 
-module.exports = router
+// Importování a použití rout pro autentizaci (přihlášení/odhlášení)
+const authRouter = require('./userRoutes');
+router.use('/auth', authRouter); // Všechny cesty připojené pod '/auth'
+
+// Exportování routeru pro použití v aplikaci
+module.exports = router;
