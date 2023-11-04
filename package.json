@@ -5,7 +5,7 @@
   "main": "application.js",
   "scripts": {
     "test": "test",
-    "start": "node application.js"
+    "start": "node application"
 
   },
   "repository": {
