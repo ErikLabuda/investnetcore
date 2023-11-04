@@ -4,7 +4,9 @@
   "description": "Webove imzinirestvo - semestralka ",
   "main": "application.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "node application"
+
   },
   "repository": {
     "type": "git",
@@ -26,4 +28,5 @@
     "nodemon": "^3.0.1",
     "npx": "^3.0.0"
   }
+  
 }
