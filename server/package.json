@@ -1,0 +1,30 @@
+{
+  "name": "invest",
+  "version": "1.0.0",
+  "description": "Webove imzinirestvo - semestralka ",
+  "main": "application.js",
+  "scripts": {
+    "start": "node application",
+    "dev": "nodemon application"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/FIS-VSE/4IT115/2023ZS/st1430/labe01/financyplan.git"
+  },
+  "author": "Erik Labuda, Marek Havelka, Adam Hlavatý",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/FIS-VSE/4IT115/2023ZS/st1430/labe01/financyplan/issues"
+  },
+  "homepage": "https://gitlab.com/FIS-VSE/4IT115/2023ZS/st1430/labe01/financyplan#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.3.0",
+    "mongoose": "^7.6.5",
+    "nodemon": "^3.0.1",
+    "npx": "^3.0.0"
+  }
+}
