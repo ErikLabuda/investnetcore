@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+
+<form method="post" asp-controller="User" asp-action="Register">
+    <div class="field mx-auto">
+        <label for="Name">Meno</label>
+        <input type="text" id="Name" name="Name">
+    </div>
+    <div class="field mx-auto">
+        <label for="Surname">Priezvisko</label>
+        <input type="text" id="Surname" name="Surname">
+    </div>
+    <div class="field mx-auto">
+        <label for="Email">E-mail</label>
+        <input type="text" id="Email" name="Email">
+    </div>
+    <div class="field mx-auto">
+        <label for="Password">Heslo</label>
+        <input type="password" id="Password" name="Password">
+    </div>
+    <button type="submit">Registrace</button>
+</form>
