@@ -1,0 +1,36 @@
+﻿stages:
+  - build
+  - test
+  - deploy
+
+variables:
+  # Definujte premenne, aké budete potrebovať, napr. pre pripojenie na databázu
+  # DATABASE_CONNECTION_STRING: "..."
+
+before_script:
+  - 'dotnet restore'
+
+build:
+  stage: build
+  script:
+    - 'dotnet build --configuration Release'
+
+test:
+  stage: test
+  script:
+    - 'dotnet test --configuration Release --no-restore'
+
+deploy:
+  stage: deploy
+  script:
+    - 'dotnet publish -c Release -o $CI_PROJECT_DIR/publish'
+    # Tu môžete pridať kroky pre nasadenie, napr. na server, Heroku, atď.
+    # Príklad nasadenia na Heroku:
+    # - 'heroku login -i'
+    # - 'heroku create'
+    # - 'heroku container:login'
+    # - 'heroku container:push web -a $HEROKU_APP_NAME'
+    # - 'heroku container:release web -a $HEROKU_APP_NAME'
+
+# Môžete pridať ďalšie sekcie, ak potrebujete
+# napr. deploy na staging, produkcii, atď.
